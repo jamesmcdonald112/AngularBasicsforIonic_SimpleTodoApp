@@ -1,0 +1,18 @@
+<ion-item>
+  <ion-label>
+    {{ todo.text }}
+    <p *ngIf="todo.priority == 1">High</p>
+    <p *ngIf="todo.priority == 2">Medium</p>
+    <p *ngIf="todo.priority == 3">Low</p>
+  </ion-label>
+
+  <ion-button (click)="setDone()" slot="end" fill="outline" *ngIf="!todo.done"
+    >Set Done</ion-button
+  >
+
+  <ion-icon
+    slot="end"
+    name="checkmark-done-outline"
+    *ngIf="todo.done"
+  ></ion-icon>
+</ion-item>
