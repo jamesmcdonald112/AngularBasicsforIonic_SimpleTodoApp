@@ -15,6 +15,7 @@ export class HomePage implements OnInit {
   };
 
   todos!: Todo[];
+  filterActive: boolean = false;
 
   constructor(private todoService: TodoService) {}
 

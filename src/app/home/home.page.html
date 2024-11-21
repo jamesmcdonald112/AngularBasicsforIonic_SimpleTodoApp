@@ -12,16 +12,26 @@
     </ion-button>
   </ion-item>
 
-  <ion-item>
-    <ion-label>Priority</ion-label>
-    <ion-select placeholder="Select One" [(ngModel)]="newTodo.priority">
-      <ion-select-option value="1">High</ion-select-option>
-      <ion-select-option value="2">Medium</ion-select-option>
-      <ion-select-option value="3">Low</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <ion-card>
+    <ion-card-header>Create Todo</ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Priority</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="newTodo.priority">
+          <ion-select-option value="1">High</ion-select-option>
+          <ion-select-option value="2">Medium</ion-select-option>
+          <ion-select-option value="3">Low</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" (click)="filterActive = !filterActive">
+    Filter is: {{ filterActive ? 'On' : 'Off'}}
+  </ion-button>
 
   <ion-list>
-    <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+    <app-todo *ngFor="let todo  of todos | priority:filterActive" [todo]="todo"></app-todo>
   </ion-list>
 </ion-content>

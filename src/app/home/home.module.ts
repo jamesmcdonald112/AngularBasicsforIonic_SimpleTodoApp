@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { SharedComponentsModule } from '../components/shared-components.module';
+import { SharedPipesModule } from '../pipes/shared-pipes.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SharedComponentsModule } from '../components/shared-components.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    SharedPipesModule
   ],
   declarations: [HomePage]
 })
